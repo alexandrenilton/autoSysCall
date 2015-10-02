@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<project name="Gemail Deployer" default="init" basedir=".">
+
+  <target name="init">
+
+    <!-- PROPRIEDADES A SEREM CONFIGURADAS -->
+    <property name="sistema.nome" value="" />
+    <property name="ear.pasta" value="" />
+    <property name="contextroot" value="" />
+    <property name="oc4j.ormi" value="" />
+    <property name="oc4j.username" value="" />
+    <property name="oc4j.password" value="" />
+    <property name="oc4j.dir" value="" />
+    <property name="ambiente.nome" value="" />
+    <property name="autodeploy.dir" value="" />
+    
+    <property name="ear.jarfile" value="app_${sistema.nome}.ear" />
+    <property name="deploy.name" value="app_${sistema.nome}" />
+    <property name="deploy.war.name" value="web_${sistema.nome}" />
+    <property name="deploy.contextroot" value="/${contextroot}" />
+  </target>
+
+  <target name="build-local" depends="init">  
+    <copy file="${ear.pasta}/${ear.jarfile}.${ambiente.nome}" tofile="${ear.pasta}/${ear.jarfile}" overwrite="true"/>
+  </target>
+  
+  <target name="copy-local" depends="init">  
+    <copy file="${ear.pasta}/${ear.jarfile}.${ambiente.nome}" tofile="${ear.pasta}/${ear.jarfile}" overwrite="true"/>
+    <copy file="${ear.pasta}/${ear.jarfile}" todir="${autodeploy.dir}" overwrite="true"/>
+  </target>
+  
+  <target name="oc4j-deploy-local" depends="build-local">
+
+    <java jar="${oc4j.dir}\admin.jar"  fork="yes">
+      <arg value="${oc4j.ormi}" />
+      <arg value="${oc4j.username}" />
+      <arg value="${oc4j.password}" />
+      <arg value="-deploy" />
+      <arg value="-file" />
+      <arg value="${ear.pasta}/${ear.jarfile}" />
+      <arg value="-deploymentName" />
+      <arg value="${deploy.name}" />
+    </java>
+
+    <java jar="${oc4j.dir}\admin.jar"  fork="yes">
+      <arg value="${oc4j.ormi}" />
+      <arg value="${oc4j.username}" />
+      <arg value="${oc4j.password}" />
+      <arg value="-bindWebApp" />
+      <arg value="${deploy.name}" />
+      <arg value="${deploy.war.name}" />
+      <arg value="http-web-site" />
+      <arg value="${deploy.contextroot}" />
+    </java>
+
+  </target>
+
+</project>

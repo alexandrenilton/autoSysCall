@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="templateInicial.tiles" path="/jsp/comum/layout/layoutPrincipal.jsp">
+        <put name="topo"   value="/jsp/comum/tiles/topoInicial.jsp" />
+        <put name="rodape" value="/jsp/comum/tiles/rodape.jsp" />
+    </definition>
+
+	
+	<definition name="templateSecundario.tiles" path="/jsp/comum/layout/layoutPrincipal.jsp">
+        <put name="topo"   value="/jsp/comum/tiles/topoPrincipal.jsp" />
+        <put name="rodape" value="/jsp/comum/tiles/rodape.jsp" />
+    </definition>
+    
+    <definition name="templateChamados.tiles" path="/jsp/comum/layout/layoutChamados.jsp">
+        <put name="topo"   value="/jsp/comum/tiles/topoPrincipal.jsp" />
+        <put name="menu"   value="/jsp/comum/tiles/menuChamados.jsp"/>
+        <put name="rodape" value="/jsp/comum/tiles/rodape.jsp" />
+    </definition>
+	
+	<definition name="falha.tiles" extends="templateInicial.tiles">
+	 	<put name="body" value="/jsp/body/efetuaLogin/falha.jsp" />
+    </definition>
+     
+	
+	
+    <definition name="layoutPrincipal.tiles" extends="templateInicial.tiles">
+        <put name="body" value="/jsp/body/Blank.jsp" />
+    </definition>
+	 
+	 <!-- EFETUA LOGIN -->
+	<definition name="efetuaLogin.tiles" extends="templateInicial.tiles">
+	 	<put name="body" value="/jsp/body/efetuaLogin/login.jsp" />
+    </definition>
+    
+    
+    <!-- MANTEM USUARIO -->
+    <definition name="menuPrincipal.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/inicial.jsp" />
+    </definition>
+    
+    <definition name="parametrosConsultarUsuario.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/consultarUsuario.jsp" />
+    </definition>
+    
+    <definition name="parametrosConsultarVariosUsuarios.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/consultarVariosUsuarios.jsp" />
+    </definition>
+    
+    <definition name="parametrosCadastrarUsuario.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/cadastrarUsuario.jsp" />
+    </definition>
+    
+    <definition name="parametrosExcluirUsuario.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/excluirUsuario.jsp" />
+    </definition>
+    
+    <definition name="parametrosCancelarUsuario.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/cancelarUsuario.jsp" />
+    </definition>
+    
+    
+    <definition name="resultadoConsultaUsuario.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/resultadoConsultaUsuario.jsp" />
+    </definition>
+    
+    <definition name="atualizadoComSucesso.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/atualizadoComSucesso.jsp" />
+    </definition>
+    
+    <definition name="erroAtualizacao.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/erroAtualizacao.jsp" />
+    </definition>
+    
+    <definition name="erroAoCadastrarUsuario.tiles" extends="templateSecundario.tiles">
+	 	<put name="body" value="/jsp/body/mantemUsuario/erroAoCadastrarUsuario.jsp" />
+    </definition>
+
+	<definition name="parametrosConsultaVariosUsuarios.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/consultarVariosUsuarios.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="sucessoCancelamento.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/sucessoCancelamento.jsp" />
+	</definition>
+	
+	
+	<definition name="erroCancelamento.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/erroCancelamento.jsp" />
+	</definition>
+	
+	<definition name="sucessoExclusao.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/sucessoExclusao.jsp" />
+	</definition>
+	
+	<definition name="erroExclusao.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/erroExclusao.jsp" />
+	</definition>
+	
+	<definition name="sucessoCadastroUsuario.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/sucessoCadastro.jsp" />
+	</definition>
+
+	<definition name="erroCadastroUsuario.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/erroCadastroUsuario.jsp" />
+	</definition>
+	
+	<definition name="exibeListaUsuarios.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemUsuario/resultadoConsultaVariosUsuarios.jsp" />
+	</definition>
+
+   <definition name="sucessoLoginAtendente.tiles" extends="templateChamados.tiles">
+   	<put name="body" value="/jsp/body/mantemChamado/telaLoginAtendente.jsp" />
+	</definition>
+	
+	 <definition name="telaAtendente.tiles" extends="templateChamados.tiles">
+   	<put name="body" value="/jsp/body/mantemChamado/telaInicialChamados.jsp" />
+	</definition>
+	
+	<definition name="telaAbrirChamados.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/abrirChamado.jsp" />
+	</definition>
+	
+	<definition name="telaResultadoAbrirChamado.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/resultadoAbrirChamado.jsp" />
+	</definition>
+	
+    <definition name="telaPesquisarChamados.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/pesquisarChamados.jsp" />
+	</definition>
+	
+	<definition name="telaResultadoPesquisa.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/resultadoPesquisa.jsp" />
+	</definition>
+	
+	<definition name="telaMostraAbrirChamado.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/mostraCamposAbrirChamado.jsp" />
+	</definition>
+	
+	<definition name="telaMostraSucessoChamado.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/mostraSucessoCadastro.jsp" />
+	</definition>
+
+	<definition name="telaResultadoPesquisaChamados.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/resultadoPesquisa.jsp" />
+	</definition>
+	
+	<definition name="telaMostraChamadoDetalhado.tiles" extends="templateSecundario.tiles">
+		<put name="body" value="/jsp/body/mantemChamado/resultadoChamadoDetalhado.jsp" />
+	</definition>
+ </tiles-definitions>

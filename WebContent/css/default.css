@@ -1,0 +1,49 @@
+body {
+  width: 780px;
+  background: #D3D8DC;
+  color: #666666;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 70%;
+}
+
+#img_topo {
+  float: left;
+  width: 780px;
+  height: 68px;
+  background-color: #175C7D;
+  background-image: url("../img/topo.jpg");
+  background-repeat: no-repeat;
+}
+
+#links {
+  float: left;
+  width: 280px;
+  height: 20px;
+  background-color: #175C7D;
+  background-image: url("../img/bk_bar.gif");
+}
+
+#usuario {
+  float: left;
+  width: 500px;
+  height:20px;
+  text-align: right;
+  padding-top: 3px;
+  padding-right: 10px;
+  background-color: #175C7D;
+  background-image: url("../img/bk_bar.gif");
+}
+
+#corpo {
+  float: left;
+  width: 400px;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+#menu {
+  
+}
+
+
+

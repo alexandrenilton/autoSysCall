@@ -1,0 +1,40 @@
+8
+
+dir
+77
+svn://10.61.103.142/aplicacoes/Projeto_Integrado_II/src/br/com/asc/mantemEquipamento/struts/action
+svn://10.61.103.142/aplicacoes
+
+
+
+2007-10-02T21:07:40.911678Z
+25
+Alexandre.Belem
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1926d5f6-269e-874c-ba76-e47750ea53c3
+
+MantemEquipamentoAction.java
+file
+
+
+
+
+2007-10-26T14:08:43.312500Z
+a4fb5a8ce8f3eb92dcca4f0dfd5e1f73
+2007-10-02T21:07:40.911678Z
+25
+Alexandre.Belem
+

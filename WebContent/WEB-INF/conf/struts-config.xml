@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+-->
+
+<struts-config>
+	<data-sources />
+
+	<form-beans>
+		<form-bean name="efetuaLoginForm" type="br.com.asc.efetuaLogin.struts.form.EfetuaLoginForm" />
+		<form-bean name="usuarioForm"     type="br.com.asc.mantemUsuario.struts.form.UsuarioForm" />
+		<form-bean name="equipamentoForm" type="br.com.asc.mantemEquipamento.struts.form.EquipamentoForm" />
+		<form-bean name="chamadoForm"     type="br.com.asc.mantemChamado.struts.form.ChamadoForm" />
+	</form-beans>
+
+	<!-- nothing -->
+	<global-exceptions />
+
+	<global-forwards>
+		<forward name="home" path="/Home.do" />
+		<forward name="erro" path="/erro.tiles" />
+		<forward name="sucessoLoginAtendente" path="sucessoLoginAtendente.tiles" />
+	</global-forwards>
+
+
+	<action-mappings>
+
+		<action path="/Home"
+			type="br.com.asc.comum.struts.action.HomeAction"
+			scope="request">
+			<forward name="sucesso" path="layoutPrincipal.tiles"
+				redirect="true" />
+		</action>
+
+		<action path="/efetuaLogin"
+			type="br.com.asc.efetuaLogin.struts.action.EfetuaLoginAction"
+			name="efetuaLoginForm" scope="request">
+			<forward name="exibeParametros" path="efetuaLogin.tiles" redirect="false" />
+			<forward name="sucesso" path="menuPrincipal.tiles" redirect="false" />
+		</action>
+
+		<action path="/login"
+			type="br.com.asc.efetuaLogin.struts.action.EfetuaLoginAction"
+			name="efetuaLoginForm" scope="request">
+			<forward name="sucesso" path="menuPrincipal.tiles" redirect="false" />
+			<forward name="falha"   path="falha.tiles"    redirect="false" />
+		</action>
+	
+	
+	<action path="/mantemEquipamento"
+			type="br.com.asc.mantemEquipamento.struts.action.MantemEquipamentoAction"
+			name="EquipamentoForm" scope="request">
+			<forward name="sucesso" path="menuPrincipal.tiles" redirect="false" />
+   </action>
+			
+		
+		
+	<action path="/mantemUsuario"
+		type="br.com.asc.mantemUsuario.struts.action.MantemUsuarioAction"
+		name="usuarioForm"
+		scope="request" >
+		<forward name="exibeParametrosConsultarUsuario"        path="parametrosConsultarUsuario.tiles" redirect="false"/>
+		<forward name="exibeParametrosCadastrarUsuario"        path="parametrosCadastrarUsuario.tiles" redirect="false"/>
+		<forward name="exibeParametrosExcluirUsuario"          path="parametrosExcluirUsuario.tiles"   redirect="false"/>
+		<forward name="exibeParametrosCancelarUsuario"         path="parametrosCancelarUsuario.tiles"  redirect="false"/>
+		<forward name="exibeParametrosConsultaVariosUsuarios"  path="parametrosConsultaVariosUsuarios.tiles" redirect="false" />
+		<!-- Forward para CONSULTA de USUARIO -->
+		<forward name="resultadoConsultarUsuario"         path="resultadoConsultaUsuario.tiles" redirect="false"/>
+		<!-- Forward para ATUALIZACAO de USUARIOS -->
+		<forward name="atualizadoComSucesso"              path="atualizadoComSucesso.tiles" redirect="false" />
+		<forward name="erroAtualizacao"                   path="erroAtualizacao.tiles" redirect="false" />
+		<forward name="erroAoCadastrarUsuario"            path="erroAoCadastrarUsuario.tiles" redirect="false" />
+		<!-- CANCELAMENTO DE USUARIO -->
+		<forward name="sucessoCancelamento"       path="sucessoCancelamento.tiles" redirect="false" />
+		<forward name="erroCancelamento"          path="erroCancelamento.tiles"    redirect="false" />
+		<!-- EXCLUSAO DE USUARIO -->
+		<forward name="sucessoExclusao"       path="sucessoExclusao.tiles" redirect="false" />
+		<forward name="erroExclusao"          path="erroExclusao.tiles"    redirect="false" />
+		<!-- CADASTRAR USUARIO -->
+		<forward name="sucessoCadastroUsuario"       path="sucessoCadastroUsuario.tiles" redirect="false" />
+		<forward name="erroCadastroUsuario"          path="erroCadastroUsuario.tiles"    redirect="false" />
+		<forward name="exibeListaUsuarios"           path="exibeListaUsuarios.tiles"     redirect="false" />
+		
+	</action>
+	
+	<action path="/mantemChamado"
+		type="br.com.asc.mantemChamado.struts.action.MantemChamadoAction"
+		name="chamadoForm"
+		scope="request" >
+		<forward name="abrirChamados"             path="telaAbrirChamados.tiles" redirect="false" />
+		<forward name="telaInicialChamados"       path="telaAtendente.tiles" redirect="false" />
+		<forward name="telaResultadoAbrirChamado" path="telaResultadoAbrirChamado.tiles" redirect="false" />
+	   <forward name="telaPesquisarChamados"     path="telaPesquisarChamados.tiles" redirect="false" />
+		<forward name="telaResultadoPesquisa"     path="telaResultadoPesquisa.tiles" redirect="false" />
+		<forward name="mostraAbrirChamado"        path="telaMostraAbrirChamado.tiles" redirect="false" />
+		<forward name="sucessoAberturaChamado"    path="telaMostraSucessoChamado.tiles" redirect="false"/>
+		<forward name="resultadoPesquisaChamados" path="telaResultadoPesquisaChamados.tiles" redirect="false" />
+		<forward name="mostraChamadoDetalhado"    path="telaMostraChamadoDetalhado.tiles"    redirect="false" />
+	</action>
+		
+
+	</action-mappings>
+
+
+	<controller
+		processorClass="org.apache.struts.tiles.TilesRequestProcessor"
+		locale="true" />
+	<message-resources parameter="MessageResources" />
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/conf/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate" value="true" />
+	</plug-in>
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/conf/validator-rules.xml,/WEB-INF/conf/validation.xml" />
+	</plug-in>
+
+</struts-config>

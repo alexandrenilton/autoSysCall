@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project name="ASC Builder" default="deploy-local" basedir=".">
+
+  <target name="init">
+    <tstamp/>
+    
+    <property file="build.properties"/>
+    
+    <ant antfile="ant/compilador.xml" target="compilar"/>
+
+  </target>
+  
+
+  <target name="build-ear-desenv" depends="init"> 
+    
+    <ant antfile="ant/ear.xml">
+      <property name="ambiente.nome" value="des" />
+      <property name="web.xml.dir" value="${web.xml.des.dir}" />
+    </ant>
+ 
+  </target>     
+ 
+  <target name="build-todos" depends="build-ear-desenv"/>
+ 
+  <target name="deploy-local" depends="build-ear-desenv"> 
+    
+    <ant antfile="ant/deploy.xml" target="oc4j-deploy-local">
+      <property name="ambiente.nome" value="des" /> 
+    </ant>
+    
+  </target>      
+ 
+  <target name="copy-autodeploy" depends="build-ear-desenv"> 
+    
+    <ant antfile="ant/deploy.xml" target="copy-local">
+      <property name="ambiente.nome" value="des" /> 
+    </ant>
+    
+  </target>        
+  
+</project>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/Home.do" location="50,350" dimension="327,88" />
+  <StrutsActivity path="/processoAutomatizadoAction.do" location="1250,50" dimension="464,88" />
+  <StrutsActivity path="/cadastrarProcessoAutomatizadoAction.do" location="950,550" dimension="457,88" />
+  <StrutsActivity path="/consultarProcessoAutomatizadoAction.do" location="50,950" dimension="455,88" />
+  <StrutsActivity path="/atualizarProcessoAutomatizadoAction.do" location="50,1150" dimension="451,88" />
+  <StrutsActivity path="/agendarGeracao.do" location="50,950" dimension="381,88" />
+  <StrutsActivity path="/agendarEnvioHur.do" location="1250,350" dimension="384,88" />
+  <StrutsActivity path="autenticacaoHUR;6" location="650,50" dimension="130,75" />
+  <StrutsActivity path="sessaoVazia;6" location="950,50" dimension="119,75" />
+  <StrutsActivity path="home;6" location="650,350" dimension="86,75" />
+  <StrutsActivity path="/usuarioSemAcesso.jsp" location="950,350" dimension="140,49" />
+  <StrutsActivity path="layoutPrincipal.tiles" location="950,450" dimension="121,49" />
+  <StrutsActivity path="mantemProcessoAutomatizadoGeracaoHur.tiles" location="1550,550" dimension="256,49" />
+  <StrutsActivity path="mantemProcessoAutomatizadoEnvioHur.tiles" location="1550,650" dimension="242,49" />
+  <StrutsActivity path="erroProcessoJaCadastrado.tiles" location="1550,250" dimension="182,49" />
+  <StrutsActivity path="resultadoCadastrarProcessoAutomatizado.tiles" location="1250,1150" dimension="254,49" />
+  <StrutsActivity path="resultadoConsultarPautGeracaoHur.tiles" location="50,750" dimension="222,49" />
+  <StrutsActivity path="resultadoConsultarPautEnvioHur.tiles" location="350,750" dimension="208,49" />
+  <StrutsActivity path="nenhumRegistro.tiles" location="1250,250" dimension="130,49" />
+  <StrutsActivity path="www.erro.com.br" location="1250,850" dimension="114,49" />
+  <StrutsActivity path="agendarGeracao.tiles" location="1250,950" dimension="132,49" />
+  <StrutsActivity path="agendarEnvioHur.tiles" location="1550,850" dimension="135,49" />
+  <StrutsActivity path="/hurLogin.do" location="50,550" dimension="100,75" />
+  <StrutsActivity path="/sessaoVazia.jsp" location="650,250" dimension="109,49" />
+  <StrutsActivity path="resultadoConsultarPaut.tiles" location="950,750" dimension="165,49" />
+  <StrutsActivity path="mantemProcessoAutomatizado.tiles" location="950,850" dimension="199,49" />
+  <StrutsActivity path="cadastrarProcessoAutomatizado.tiles" location="650,750" dimension="207,49" />
+  <StrutsActivity path="consultarProcessoAutomatizado.tiles" location="950,950" dimension="205,49" />
+  <StrutsActivity path="resultadoCadastroProcessoAutomatizado.tiles" location="650,950" dimension="250,49" />
+  <StrutsActivity path="resultadoConsultaProcessoAutomatizado.tiles" location="650,1050" dimension="248,49" />
+  <StrutsActivity path="alterarProcessoAutomatizado.tiles" location="650,1150" dimension="193,49" />
+  <StrutsActivity path="resultadoAlterarProcessoAutomatizado.tiles" location="950,1150" dimension="239,49" />
+  <StrutsActivity path="listaProcessosAutomatizados.tiles" location="350,650" dimension="190,49" />
+  <StrutsActivity path="/index.jsp" location="50,250" dimension="77,49" />
+  <StrutsActivity path="/layoutPrincipal.tiles" location="350,250" dimension="125,49" />
+  <StrutsActivity path="/hurLoginAction" location="950,250" dimension="104,49" />
+  <StrutsActivity path="layoutPrincipal.jsp" location="350,550" dimension="116,49" />
+  <StrutsActivity path="/jsp/comum/layout/layoutPrincipal.jsp" location="650,550" dimension="209,49" />
+  <StrutsActivity path="cadastrarProcessoAutomatizado.tiles.tiles" location="650,650" dimension="230,49" />
+  <StrutsActivity path="nenhumRegistro.jsp" location="1250,750" dimension="125,49" />
+  <StrutsActivity path="/nenhumRegistro.jsp" location="650,850" dimension="129,49" />
+  <StrutsActivity path="mensagemErroPaut.tiles" location="650,1250" dimension="145,49" />
+  <StrutsTransition id="/consultarProcessoAutomatizadoAction.do,usuarioSemAcesso,/usuarioSemAcesso.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="505,954" />
+      <AbsolutePoint location="603,954" />
+      <AbsolutePoint location="603,200" />
+      <AbsolutePoint location="1084,200" />
+      <AbsolutePoint location="1084,350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/consultarProcessoAutomatizadoAction.do,geracaoHur,resultadoConsultarPautGeracaoHur.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="210,950" />
+      <AbsolutePoint location="210,799" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Home.do,sucesso,layoutPrincipal.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="213,438" />
+      <AbsolutePoint location="213,474" />
+      <AbsolutePoint location="950,474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="home;6,null,/Home.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,387" />
+      <AbsolutePoint location="377,387" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/agendarGeracao.do,sucesso,agendarGeracao.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,1038" />
+      <AbsolutePoint location="240,1114" />
+      <AbsolutePoint location="1316,1114" />
+      <AbsolutePoint location="1316,999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="autenticacaoHUR;6,null,/hurLogin.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,87" />
+      <AbsolutePoint location="-25,87" />
+      <AbsolutePoint location="-25,587" />
+      <AbsolutePoint location="50,587" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/agendarEnvioHur.do,usuarioSemAcesso,/usuarioSemAcesso.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1020,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="sessaoVazia;6,null,/sessaoVazia.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,87" />
+      <AbsolutePoint location="855,87" />
+      <AbsolutePoint location="855,274" />
+      <AbsolutePoint location="759,274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cadastrarProcessoAutomatizadoAction.do,existeProcessoCadastrado,erroProcessoJaCadastrado.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1178,594" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cadastrarProcessoAutomatizadoAction.do,usuarioSemAcesso,/usuarioSemAcesso.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1075,550" />
+      <AbsolutePoint location="1075,399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/consultarProcessoAutomatizadoAction.do,envioHur,resultadoConsultarPautEnvioHur.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="446,950" />
+      <AbsolutePoint location="446,799" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/atualizarProcessoAutomatizadoAction.do,sucesso,resultadoCadastrarProcessoAutomatizado.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="501,1214" />
+      <AbsolutePoint location="1377,1214" />
+      <AbsolutePoint location="1377,1199" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Home.do,usuarioSemAcesso,/usuarioSemAcesso.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="213,350" />
+      <AbsolutePoint location="213,314" />
+      <AbsolutePoint location="1020,314" />
+      <AbsolutePoint location="1020,350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/processoAutomatizadoAction.do,geracaoHur,mantemProcessoAutomatizadoGeracaoHur.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1678,574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/consultarProcessoAutomatizadoAction.do,nenhum,nenhumRegistro.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="505,984" />
+      <AbsolutePoint location="633,984" />
+      <AbsolutePoint location="633,514" />
+      <AbsolutePoint location="1315,514" />
+      <AbsolutePoint location="1315,299" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/cadastrarProcessoAutomatizadoAction.do,sucesso,resultadoCadastrarProcessoAutomatizado.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1397,638" />
+      <AbsolutePoint location="1397,1150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/processoAutomatizadoAction.do,envioHur,mantemProcessoAutomatizadoEnvioHur.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1671,674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/atualizarProcessoAutomatizadoAction.do,erro,www.erro.com.br,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="275,1238" />
+      <AbsolutePoint location="275,1374" />
+      <AbsolutePoint location="1234,1374" />
+      <AbsolutePoint location="1234,874" />
+      <AbsolutePoint location="1250,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/agendarEnvioHur.do,sucesso,agendarEnvioHur.tiles,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1617,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/agendarGeracao.do,usuarioSemAcesso,/usuarioSemAcesso.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,950" />
+      <AbsolutePoint location="240,914" />
+      <AbsolutePoint location="1457,914" />
+      <AbsolutePoint location="1457,374" />
+      <AbsolutePoint location="1090,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/processoAutomatizadoAction.do,usuarioSemAcesso,/usuarioSemAcesso.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1020,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

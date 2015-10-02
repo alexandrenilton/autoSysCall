@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<project name="Gemail Builder" default="preparar-ear" basedir=".">
+
+  <target name="init">
+  	
+    <tstamp/>
+  	
+  	<!-- CONFIGURACOES -->
+  	<property name="sistema.nome" value="" />
+  	<property name="ambiente.nome" value="" />
+  	<property name="web.xml.dir" value="" />
+  	
+    <!-- CONFIGURACOES PADRAO -->  	
+    <property name="ear.jarfile" value="app_${sistema.nome}.ear" />
+  	<property name="war.jarfile" value="web_${sistema.nome}.war" />  	
+    <property name="ejb.jarfile" value="ejb_${sistema.nome}.jar" />
+    <property name="config.dir" value="deploy" />  	
+  	<property name="build.dir" value="build" />  	
+    <property name="web.dir" value="WebRoot" />  	
+    <property name="dist.dir" value="dist" />
+  		
+  	<mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}"/>    
+  	<mkdir dir="${config.dir}/${ambiente.nome}/WEB-INF/classes"/>
+  	
+  </target>
+
+  <target name="prepara-ambiente" depends="init">
+
+  	<copy todir="${class.dir}" overwrite="true">
+      <fileset dir="${src.dir}">
+       <exclude name="br/**"/>
+       <exclude name="com/**"/>
+      </fileset>
+  	</copy>
+    
+  </target>
+  
+  <target name="preparar-war" depends="prepara-ambiente">
+
+    <delete>
+      <fileset dir="${build.dir}" includes="*.*"/>  	
+    </delete>
+      	
+    <war destfile="${build.dir}/${war.jarfile}" webxml="${web.xml.dir}/web.xml">
+      <lib dir="${app.lib.dir}" includes="*.jar"/>
+      <fileset dir="${web.dir}" excludes="**/web.xml"/>
+      <fileset dir="${config.dir}/${ambiente.nome}" includes="WEB-INF/**/*.*"/>
+    </war>
+
+  </target>
+
+  <target name="preparar-ear" depends="preparar-war">
+
+    <ear destfile="${dist.dir}/${ear.jarfile}.${ambiente.nome}" 
+         appxml="${config.dir}/${ambiente.nome}/META-INF/application.xml">
+      <fileset dir="${build.dir}"/>
+      <fileset dir="${config.dir}/${ambiente.nome}">
+        <include name="META-INF/orion-application.xml"/>
+      	<include name="META-INF/data-sources.xml"/>
+      	<include name="META-INF/principals.xml"/>      	
+        <include name="META-INF/jazn-data.xml"/>      	
+      </fileset>
+    </ear>
+
+  </target>
+  
+</project>
